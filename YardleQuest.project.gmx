@@ -10,6 +10,8 @@
     <sprite>sprites\spr_path</sprite>
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_health</sprite>
       <sprite>sprites\spr_player_down</sprite>
       <sprite>sprites\spr_player_left</sprite>
       <sprite>sprites\spr_player_right</sprite>
@@ -28,7 +30,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
-    <background>background\background2</background>
+    <background>background\grass</background>
     <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
@@ -51,6 +53,7 @@
     <scripts name="Helper Scripts">
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_get_input.gml</script>
+      <script>scripts\scr_chance.gml</script>
     </scripts>
     <scripts name="Experience Scripts">
       <script>scripts\scr_experience_idle_state.gml</script>
@@ -67,13 +70,16 @@
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_enemy_bot</object>
     <object>objects\obj_experience</object>
+    <object>objects\obj_health</object>
     <object>objects\obj_lifeform_parent</object>
     <object>objects\obj_damage</object>
     <object>objects\obj_shadow</object>
     <object>objects\obj_player_stats</object>
+    <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
+    <room>rooms\rm_two</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

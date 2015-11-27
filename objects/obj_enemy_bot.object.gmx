@@ -60,7 +60,11 @@ targety = 0;
 instance_create(x+3, y, obj_experience);
 instance_create(x-3, y, obj_experience);
 instance_create(x, y-3, obj_experience);
-
+// Drop health
+if (scr_chance(.5))
+{
+    instance_create(x+random_range(-4, 4), y+ random_range(-4, 4), obj_health);
+}
 </string>
           </argument>
         </arguments>
