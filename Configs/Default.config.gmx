@@ -462,7 +462,7 @@
       <constant name="UP">1</constant>
       <constant name="LEFT">2</constant>
       <constant name="DOWN">3</constant>
-      <constant name="DASH_COST">.1</constant>
+      <constant name="DASH_COST">1.5</constant>
     </constants>
   </ConfigConstants>
 </Config>

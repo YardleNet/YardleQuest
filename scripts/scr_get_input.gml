@@ -5,8 +5,8 @@ left_key = keyboard_check(ord('A'));
 up_key = keyboard_check(ord('W'));
 down_key = keyboard_check(ord('S'));
 dash_key = keyboard_check(vk_shift);
-attack_key = keyboard_check_pressed(ord('X'));
-
+//attack_key = keyboard_check_pressed(ord('X'));
+attack_key = mouse_check_button_pressed(mb_left);
 // Assign controller input
 xaxis = (right_key - left_key);
 yaxis = (down_key - up_key);

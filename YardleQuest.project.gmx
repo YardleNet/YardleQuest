@@ -28,18 +28,23 @@
     <sprite>sprites\spr_enemy_bot</sprite>
     <sprite>sprites\spr_bot_shadow</sprite>
     <sprite>sprites\spr_damage</sprite>
+    <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_experience</sprite>
     <sprite>sprites\sprite16</sprite>
     <sprite>sprites\spr_wall_2</sprite>
+    <sprites name="UI">
+      <sprite>sprites\spr_hp_border</sprite>
+      <sprite>sprites\spr_hp_inner</sprite>
+      <sprite>sprites\spr_sp_inner</sprite>
+      <sprite>sprites\spr_sp_bg</sprite>
+      <sprite>sprites\spr_hp_bg</sprite>
+      <sprite>sprites\spr_sp_border</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
     <background>background\grass</background>
     <background>background\background3</background>
-    <background>background\bg_floor</background>
-    <background>background\bg_wall</background>
-    <background>background\bg_walltiles2</background>
-    <background>background\bg_walltiles</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -62,7 +67,6 @@
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_get_input.gml</script>
       <script>scripts\scr_chance.gml</script>
-      <script>scripts\grid_place_meeting.gml</script>
     </scripts>
     <scripts name="Experience Scripts">
       <script>scripts\scr_experience_idle_state.gml</script>
@@ -82,21 +86,15 @@
     <object>objects\obj_health</object>
     <object>objects\obj_lifeform_parent</object>
     <object>objects\obj_damage</object>
-    <object>objects\obj_shadow</object>
+    <object>objects\obj_bullet</object>
+    <object>objects\object12</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_door</object>
-    <object>objects\obj_level</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
+    <room>rooms\rm_two</room>
   </rooms>
-  <constants number="5">
-    <constant name="CELL_WIDTH">32</constant>
-    <constant name="CELL_HEIGHT">32</constant>
-    <constant name="FLOOR">-5</constant>
-    <constant name="WALL">-6</constant>
-    <constant name="VOID">-7</constant>
-  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

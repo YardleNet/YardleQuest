@@ -1,4 +1,5 @@
 /// scr_dash_state
+image_speed = .5;
 dir = face*90;
 len = spd*1.5;
 
