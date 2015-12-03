@@ -27,6 +27,15 @@ else
 hspd = lengthdir_x(len, dir);
 vspd = lengthdir_y(len, dir);
 
+// Dash state
+if (dash_key and obj_player_stats.stamina >= DASH_COST) 
+{
+    state = scr_dash_state();
+    alarm[0] = room_speed/30;
+    obj_player_stats.stamina -= DASH_COST;
+    obj_player_stats.alarm[0] = room_speed;
+  
+}
 
 // Horizontal collisions
 if (grid_place_meeting(x+hspd, y)) {
@@ -42,22 +51,12 @@ if (grid_place_meeting(x, y+vspd)) {
         y+=sign(vspd);
     }
     vspd = 0;
-}
-
-// Dash state
-if (dash_key and obj_player_stats.stamina >= DASH_COST) 
-{
-    state = scr_dash_state();
-    alarm[0] = room_speed/30;
-    obj_player_stats.stamina -= DASH_COST;
-    obj_player_stats.alarm[0] = room_speed;
-  
-}
+} else {
 
 // Move
 phy_position_x += hspd;
 phy_position_y += vspd;
-
+}
 // Control the sprite
 image_speed = .5;
 if (len == 0) image_index = 0;
