@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-10</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>obj_lifeform_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>/// Set fixed rotation
 event_inherited();
-hp = 10;
+hp = 100;
+sp = 100;
 spd = 2;
 hspd = 0;
 vspd = 0;
@@ -100,6 +101,68 @@ if (obj_player_stats.hp &lt;= 0)
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Go through the door
+if (room_exists(other.new_room))
+{
+    room_goto(other.new_room);
+    x = other.new_x;
+    y = other.new_y;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_health">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Collect health
+with (other) 
+{
+instance_destroy();
+}
+
+// Hp add
+with (obj_player_stats)
+{
+    hp = min(hp+5, maxhp);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_experience">
       <action>
         <libid>1</libid>
@@ -138,24 +201,25 @@ with (obj_player_stats)
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="32">
+    <event eventtype="5" enumb="112">
       <action>
         <libid>1</libid>
-        <id>531</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_fullscreen</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>4</kind>
-            <string>2</string>
+            <kind>1</kind>
+            <string>window_set_fullscreen(true);
+</string>
           </argument>
         </arguments>
       </action>
@@ -193,12 +257,36 @@ with (obj_player_stats)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Change back to move state
+            <string>/// Changes back to move state after attack
 if (state == scr_attack_state) 
 {
     state = scr_move_state;
     attacked = false;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Set fixed rotation
+phy_fixed_rotation = true;
 </string>
           </argument>
         </arguments>
@@ -222,6 +310,7 @@ if (state == scr_attack_state)
           <argument>
             <kind>1</kind>
             <string>/// Draw player shadow
+depth = -y;
 draw_sprite(spr_player_shadow, image_index, x, y);
 draw_self();
 </string>
@@ -258,9 +347,9 @@ draw_self();
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>12,19</point>
-    <point>2,19</point>
     <point>2,10</point>
     <point>12,10</point>
+    <point>12,19</point>
+    <point>2,19</point>
   </PhysicsShapePoints>
 </object>

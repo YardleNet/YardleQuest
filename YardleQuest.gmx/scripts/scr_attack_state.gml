@@ -1,4 +1,4 @@
-/// scr_attack_state
+/// Change player to attack sprites
 image_speed = .75;
 
 switch (sprite_index) 
@@ -27,21 +27,25 @@ if (image_index >= 3 and attacked == false)
     switch (sprite_index) 
     {
         case spr_player_attack_down:
+            sprite_index = spr_player_attack_down;
             xx = x;
             yy = y+14
             break;
         
         case spr_player_attack_up:
+            sprite_index = spr_player_attack_up;
             xx = x;
             yy = y-10;    
             break;
         
         case spr_player_attack_left:
+            sprite_index = spr_player_attack_left;
             xx = x-10;
             yy = y+2;     
             break;
         
         case spr_player_attack_right:
+            sprite_index = spr_player_attack_right;
             xx = x+10;
             yy = y+2;
             break;    
