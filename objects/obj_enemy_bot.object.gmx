@@ -193,7 +193,6 @@ if (state != scr_enemy_stall_state)
           <argument>
             <kind>1</kind>
             <string>/// Draw player shadow
-image_xscale = sign(hspd);
 draw_sprite(spr_bot_shadow, image_index, x, y);
 draw_self();
 </string>
