@@ -182,6 +182,7 @@
     <instance objName="obj_door" x="544" y="352" name="inst_F15600A4" locked="0" code="new_room = rm_two;&#xA;new_x = 560;&#xA;new_y = 48;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_stats" x="0" y="368" name="inst_7FCA0E19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_view" x="16" y="368" name="inst_92E9B1F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lighting" x="64" y="336" name="inst_BC67D55B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

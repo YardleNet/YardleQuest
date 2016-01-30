@@ -457,7 +457,8 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="5">
+    <constants number="6">
+      <constant name="ATTACK_COST">3</constant>
       <constant name="RIGHT">0</constant>
       <constant name="UP">1</constant>
       <constant name="LEFT">2</constant>

@@ -1,7 +1,26 @@
-/// Change player to attack sprites
+/// Change player to attack sprite
 image_speed = .75;
 
-if (image_index >= 3 and attacked == false)
+switch (sprite_index) 
+{
+    case spr_player_down:
+        sprite_index = spr_player_attack_down;
+        break;
+    
+    case spr_player_up:
+        sprite_index = spr_player_attack_up;
+        break;
+    
+    case spr_player_left:
+        sprite_index = spr_player_attack_left;
+        break;
+    
+    case spr_player_right:
+        sprite_index = spr_player_attack_right;
+        break;    
+}
+/// Create damage object
+if (image_index >= 3 and attacked == false) 
 {
     var xx = 0;
     var yy = 0;

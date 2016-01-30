@@ -123,7 +123,20 @@ draw_sprite(spr_sp_border,1, view_wport[0]-208, 20);
 
 //draw_text(32, 128, "HP: " + string(hp) + "/" + string(maxhp));
 //draw_text(32, 160, "SP: " + string(round(sp)) + "/" + string(maxsp));
-//draw_text(32, 192, "LVL: " + string(level));
+draw_set_font(font0);
+draw_set_color(c_dkgray);
+draw_text(472+2,10+2,string(level));
+draw_set_color(c_black)
+draw_text(472+1,10+1, string(level));
+draw_text(472-1,10-1, string(level));
+draw_text(472,10+1, string(level));
+draw_text(472+1,10, string(level));
+draw_text(472,10-1, string(level));
+draw_text(472-1,10, string(level));
+draw_text(472-1,10+1, string(level));
+draw_text(472+1,10-1, string(level));
+draw_set_color(c_yellow)
+draw_text(472,10, string(level));
 //draw_text(32, 224, "EXP: " + string(experience) + "/" + string(maxexperience));
 
 </string>
